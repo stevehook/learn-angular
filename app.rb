@@ -3,11 +3,11 @@ require './app/requires'
 class App < Sinatra::Base
   set :static, true
   set :root, File.dirname(__FILE__)
-  set :public, 'public'
+  set :public_dir, 'public'
 
   helpers do
     def partial(page, options={})
-      haml page, options.merge!(:layout => false)
+      haml page, options.merge!(layout: false)
     end
   end
 
