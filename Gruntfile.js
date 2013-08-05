@@ -26,6 +26,7 @@ module.exports = function (grunt) {
     yeomanConfig.app = require('./bower.json').appPath || yeomanConfig.app;
   } catch (e) {}
 
+
   grunt.initConfig({
     yeoman: yeomanConfig,
     watch: {
@@ -259,6 +260,16 @@ module.exports = function (grunt) {
     karma: {
       unit: {
         configFile: 'karma.conf.js',
+        singleRun: true
+      },
+      watch: {
+        configFile: 'karma.conf.js',
+        autoWatch: true,
+        singleRun: false
+      },
+      ci: {
+        configFile: 'karma.conf.js',
+        browsers: ['PhantomJS'],
         singleRun: true
       }
     },
