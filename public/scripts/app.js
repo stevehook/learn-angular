@@ -1,9 +1,13 @@
 'use strict';
 
-angular.module('learnAngularApp', [])
-  .config(function ($routeProvider) {
+angular.module('docApp', [])
+  .config(function($routeProvider) {
     $routeProvider
       .when('/', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
+      .when('/resource/:id', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })

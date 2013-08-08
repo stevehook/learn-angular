@@ -1,6 +1,12 @@
 <div>
   <h1>Documents</h1>
-  <ul>
-    <li ng-repeat="resource in resources">{{resource.title}}</li>
+  <ul id='documentList'>
+    <li ng-repeat="resource in resources">
+      <a href='#/resource/{{resource.id}}'>{{resource.title}}</a>
+    </li>
   </ul>
+  <div id='documentDetail' ng-switch='document != null' ng-model='resources[id]'>
+    <h1>{{document.title}}</h1>
+    <div>{{document.body}}</div>
+  </div>
 </div>
